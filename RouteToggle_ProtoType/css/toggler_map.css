@@ -12,14 +12,12 @@ ul.plain {
 }
 
 .item-wrapper {
-  height: 240px;
   padding-bottom: 0;
   -webkit-transition: 400ms ease-in-out;
   transition: 400ms ease-in-out;
 }
 
 .item-wrapper.active{
-  padding-bottom: 300px;
 }
 
 .item {
@@ -51,13 +49,13 @@ ul.plain {
 
 .dropdown {
   height: 0;
-  background-color: #ffffff;
   position: absolute;
   bottom: 10;
   left: 0;
   right: 0;
   z-index: 2;
   overflow: hidden;
+  padding-top:20px;
 }
 
 .item-wrapper .dropdown.active {
@@ -143,12 +141,52 @@ text-transform: uppercase;
 
 
 .arrow {
-  border-bottom: solid 3px black;
+  border-bottom: solid 3px white;
   width: 76px;
-  background-color: #212121;
   margin: 0px auto;
   z-index: 1;
   opacity: 0;
+}
+
+.preacher {
+  color: #40c8c0;
+padding: 0px;
+margin: 0;
+margin-top: 10px;
+font-size: 15px;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-family: 'Muli', sans-serif;
+}
+
+.name {
+  color: #ffffff;
+padding: 0px;
+margin: 0;
+margin-top: 10px;
+font-size: 8px;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-family: 'Muli', sans-serif;
+line-height: .5px;
+}
+
+.preacher2 {
+  color: #f47b28;
+padding: 0px;
+margin: 0;
+margin-top: 10px;
+font-size: 15px;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-family: 'Muli', sans-serif;
+}
+.routemap {
+  background-color: #2f2f2f;
+  height:610px;
 }
 
 .arrow.active{
