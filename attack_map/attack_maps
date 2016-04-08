@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Attack Map</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+
+   <script type="text/javascript">
+
+   var map;
+
+   // lets define some vars to make things easier later
+   var kml = {
+       a: {
+           name: "2013",
+           url: "http://www.google.com/maps/d/kml?forcekml=1&mid=zvUxEfVNBqog.k42qoXVRtaXE"
+       },
+       e: {
+            name: "2014",
+           url: "http://www.google.com/maps/d/kml?forcekml=1&mid=zvUxEfVNBqog.khGgmZYUoyZs"
+       },
+    b: {
+          name: "2015",
+           url: "http://www.google.com/maps/d/kml?forcekml=1&mid=zvUxEfVNBqog.kWEk-COHPUn0"
+       },
+       c: {
+             name: "2016",
+              url: "http://www.google.com/maps/d/kml?forcekml=1&mid=zvUxEfVNBqog.kWEk-COHPUn0"
+          },
+   };
+
+   // initialize our google map
+   function initializeMap() {
+       var options = {
+           center: new google.maps.LatLng(34.0000, 9.0000),
+           zoom: 6,
+           mapTypeId: google.maps.MapTypeId.TERRAIN,
+         disableDoubleClickZoom: true,
+         mapTypeControl: false,
+         scaleControl: true,
+         scrollwheel: false,
+         panControl: true,
+         streetViewControl: false,
+         draggable : true,
+         overviewMapControl: true,
+         overviewMapControlOptions: {
+             opened: true,
+         },
+           styles:[
+       {
+           "featureType": "administrative",
+           "elementType": "all",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "administrative.province",
+           "elementType": "label",
+           "stylers": [
+               {
+                   "visibility": "on"
+               }
+           ]
+         },
+       {
+           "featureType": "administrative.country",
+           "elementType": "label",
+           "stylers": [
+               {
+                   "visibility": "on"
+               }
+           ]
+       },
+       {
+           "featureType": "administrative.country",
+           "elementType": "geometry",
+           "stylers": [
+               {
+                   "visibility": "on"
+               }
+           ]
+       },
+       {
+           "featureType": "administrative.country",
+           "elementType": "geometry.stroke",
+           "stylers": [
+               {
+                   "weight": "2"
+               }
+           ]
+       },
+       {
+           "featureType": "administrative.province",
+           "elementType": "geometry",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "administrative.province",
+           "elementType": "geometry.stroke",
+           "stylers": [
+               {
+                   "weight": "0.55"
+               }
+           ]
+       },
+       {
+           "featureType": "administrative.locality",
+           "elementType": "geometry",
+           "stylers": [
+               {
+                   "visibility": "off"
+               },
+               {
+                   "color": "#4ED18C"
+               }
+           ]
+       },
+       {
+           "featureType": "administrative.locality",
+           "elementType": "geometry.stroke",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "administrative.neighborhood",
+           "elementType": "geometry.fill",
+           "stylers": [
+               {
+                   "visibility": "off"
+               },
+               {
+                   "color": "#4ED18C"
+               }
+           ]
+       },
+       {
+           "featureType": "administrative.neighborhood",
+           "elementType": "geometry.stroke",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "administrative.land_parcel",
+           "elementType": "geometry",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "landscape",
+           "elementType": "geometry",
+           "stylers": [
+               {
+                   "visibility": "simplified"
+               },
+               {
+                   "color": "#4ED18C"
+               },
+
+               {
+                   "lightness": "-42"
+               }
+           ]
+       },
+       {
+           "featureType": "landscape",
+           "elementType": "geometry.fill",
+           "stylers": [
+               {
+                   "visibility": "simplified"
+               },
+               {
+                   "color": "#6fbcad"
+               }
+           ]
+       },
+       {
+           "featureType": "landscape",
+           "elementType": "geometry.stroke",
+           "stylers": [
+               {
+                   "visibility": "simplified"
+               },
+               {
+                   "color": "#4ED18C"
+               },
+
+           ]
+       },
+       {
+           "featureType": "landscape",
+           "elementType": "labels",
+           "stylers": [
+               {
+                   "visibility": "on"
+               }
+           ]
+       },
+       {
+           "featureType": "landscape",
+           "elementType": "labels.text",
+           "stylers": [
+               {
+                   "visibility": "on"
+               }
+           ]
+       },
+       {
+           "featureType": "landscape",
+           "elementType": "labels.text.fill",
+           "stylers": [
+               {
+                   "visibility": "on"
+               }
+           ]
+       },
+       {
+           "featureType": "landscape",
+           "elementType": "labels.text.stroke",
+           "stylers": [
+               {
+                   "visibility": "on"
+               }
+           ]
+       },
+       {
+           "featureType": "landscape",
+           "elementType": "labels.icon",
+           "stylers": [
+               {
+                   "visibility": "on"
+               }
+           ]
+       },
+       {
+           "featureType": "poi",
+           "elementType": "all",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "road",
+           "elementType": "all",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "road",
+           "elementType": "labels.text",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "road",
+           "elementType": "labels.icon",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "transit",
+           "elementType": "all",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "transit",
+           "elementType": "labels",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "transit",
+           "elementType": "labels.text",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "transit",
+           "elementType": "labels.icon",
+           "stylers": [
+               {
+                   "visibility": "off"
+               }
+           ]
+       },
+       {
+           "featureType": "water",
+           "elementType": "all",
+           "stylers": [
+               {
+                   "visibility": "on"
+               },
+               {
+                   "color": "#414042"
+               }
+           ]
+       },
+       {
+           "featureType": "water",
+           "elementType": "labels",
+           "stylers": [
+               {
+                   "visibility": "on"
+               }
+           ]
+       }
+   ],
+       }
+
+
+       map = new google.maps.Map(document.getElementById("map_canvas"), options);
+
+       createTogglers();
+   };
+
+   google.maps.event.addDomListener(window, 'load', initializeMap);
+
+   // the important function... kml[id].xxxxx refers back to the top
+   function toggleKML(checked, id) {
+
+       if (checked) {
+
+           var layer = new google.maps.KmlLayer(kml[id].url, {
+               preserveViewport: true,
+               suppressInfoWindows: false
+           });
+           // store kml as obj
+           kml[id].obj = layer;
+           kml[id].obj = layer;
+           kml[id].obj.setMap(map);
+       }
+       else {
+           kml[id].obj.setMap(null);
+           delete kml[id].obj;
+       }
+
+   };
+
+
+
+   // create the controls dynamically because it's easier, really
+   function createTogglers() {
+
+       var html = "<form><h2>Attacks by Year</h2><ul>";
+       for (var prop in kml) {
+           html += "<li id=\"selector-" + prop + "\"><input type='checkbox' id='" + prop + "'" +
+           " onclick='highlight(this,\"selector-" + prop + "\"); toggleKML(this.checked, this.id)' \/>" +
+           kml[prop].name + "<\/li>";
+       }
+       html += "<li class='control'><a href='#' onclick='removeAll();return false;'>" +
+       "Clear\<\/li>" +
+       "<\/ul><\/form>";
+
+       document.getElementById("toggle_box").innerHTML = html;
+   };
+
+
+   // easy way to remove all objects
+   function removeAll() {
+       for (var prop in kml) {
+           if (kml[prop].obj) {
+               kml[prop].obj.setMap(null);
+               delete kml[prop].obj;
+           }
+
+       }
+   };
+
+
+   // Append Class on Select
+   function highlight(box, listitem) {
+       var selected = 'selected';
+       var normal = 'normal';
+       document.getElementById(listitem).className = (box.checked ? selected: normal);
+   };
+
+   function startup() {
+   // for example, this toggles kml b on load and updates the menu selector
+   var checkit = document.getElementById('b');
+   checkit.checked = true;
+   toggleKML(checkit, 'b');
+   highlight(checkit, 'selector1');
+    }
+
+
+   </script>
+</head>
+
+<body>
+
+<div id="legend">
+  <h2 class="attackMaps">Icons Key</h2>
+</div>
+  <article class="mapFF">
+<div id="map_canvas" style="position:fixed;width: 800px; height: 600px;border: 5px solid #444444;"></div>
+<div id="toggle_box" style="background:#414042;letter-spacing: 2px;border: 5px solid #414042;padding-bottom:11px;padding-top:21px;width:800px;
+    float: left;"></div>
+
+</article>
+
+</body>
