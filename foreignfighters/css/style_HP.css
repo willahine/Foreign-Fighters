@@ -487,16 +487,16 @@ div.container-home .nav-mainmenu li a{
 }
 
 div.container-home .nav-mainmenu li.btn-ourjourney{
-  background-image: url(http://media.gettyimages.com/photos/demonstration-of-the-locals-in-hakkari-the-southeast-turkey-on-iraqi-picture-id484820759);
+  background-image: url('../img/case_studies.jpg');
 }
 
 div.container-home .nav-mainmenu li.btn-ournetwork{
-  background-image: url(http://i.imgur.com/QbKoK10.jpg);
+  background-image: url('../img/care_cover.jpg');
 }
 
 
 div.container-home .nav-mainmenu li.btn-thebigideas{
-  background-image: url(http://www.albawaba.com/sites/default/files/im/la-fg-wn-tunisia-arab-spring-democracy-2014011-001.jpg);
+  background-image:  url('../img/homepage_Ennahda_web.png');
 }
 
 
@@ -621,13 +621,11 @@ div.container-home .nav-mainmenu li a.animate-links{
 }
 
 
-div.container-home .nav-mainmenu li.btn-ourjourney:hover{
+div.container-home .nav-mainmenu li.btn-ourjourney:hover, div.container-home .nav-mainmenu li.btn-ournetwork:hover{
   background: none #15173f;
 }
 
-div.container-home .nav-mainmenu li.btn-ournetwork:hover{
-  background: none #0c5b84;
-}
+
 
 div.container-home .nav-mainmenu li.btn-thebigideas:hover{
   background: none #f47b28;

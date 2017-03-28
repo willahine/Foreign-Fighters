@@ -60,6 +60,69 @@
 
 </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 650, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<style>
+/** page structure **/
+#w {
+  margin: 0 auto;
+}
+#content {
+  padding: 25px 20px;
+}
+
+#stickynav {
+  z-index: 9999;
+}
+
+#stickynav ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+#stickynav #nav { position: fixed; z-index: 9999; }
+#stickynav #nav li { display: inline; }
+#stickynav #nav li a {
+  float: left;
+text-decoration: none;
+margin-right: 10px;
+font-size: 1.1em;
+font-weight: lighter;
+padding: 5px 7px;
+color: #444;
+      transition: color .1s ease-out, background 1s ease-in;
+}
+#stickynav #nav li a:hover {
+  color:#15173f;
+  background-color:#f47b28
+}
+</style>
+
 </head>
 
 <body>
@@ -139,11 +202,25 @@
     </header>
 
     <!-- Main Content -->
+
+                      <div id="w">
+                       <div id="content">
+                        <nav id="stickynav">
+
+                         <ul id="nav">
+                          <li><a href="#link1">Europe</a></li>
+                          <li><a href="#link2">Russia</a></li>
+                          <li><a href="#link3">SE Asia</a></li>
+                         </ul>
+                        </nav>
+                        </div>
+                      </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-preview">
 
+  <section id="link1">
 <h2>Europe</h2>
 
 <p>Europe is perhaps the most vulnerable area for foreign fighter fallout. Between 2011 and 2016, between 5,000 and 7,000 Europeans went to fight in Iraq and Syria.<sup>1</sup> Fighters returning to Europe find the persecution and economic isolation of Muslims worse than when they left—trends that demographic shifts will likely exacerbate.</p>
@@ -178,6 +255,10 @@
 
   <blockquote>The number of veterans from the Syrian battlefields being deployed to Europe and the apparent continued survival of senior francophone figures at the apex of the Islamic State’s external operations wing suggest that despite military efforts to deprive the Islamic State of territorial control in Iraq and Syria, the group will continue to be a threat to France, Belgium, and other European countries for some time to come.<sup>20</sup></blockquote>
 
+</section>
+
+
+  <section id="link2">
   <h2>Russia</h2>
 
   <p>Russian-speaking fighters comprise approximately 15 percent of foreign fighters in Iraq and Syria.<sup>21</sup> From the former Soviet bloc countries, an estimated 900 Dagestanis, 500 Chechens, and 500 Uzbeks have already traveled to Iraq and Syria.<sup>22</sup> Estimates for Russian citizens range up to 3,400.<sup>23</sup> Russian is the third most commonly spoken language inside Islamic State’s territory; Raqqa is home to an entire Russian-speaking neighborhood.<sup>24</sup></p>
@@ -207,6 +288,10 @@
 <p>Economically, many Russophone Muslim youth are unemployed. The youth unemployment rates in predominantly Muslim Chechnya (55 percent), Dagestan (40 percent), and Ingushetia (70 percent) are notably higher than the Russian average of 10 percent.<sup>42</sup> Recalling that high rates of youth unemployment strongly correlate with militancy in European Muslims, youth unemployment among Russian-speaking Muslims bears watching. Demographic trends will likely exacerbate Muslim youth unemployment, too. Higher birthrates in the North Caucasus will lower the its median age, which is already much lower than the rest of Russia’s: Chechnya (25.5), Dagestan (29.5), Ingushetia (27.7), and Russia (38.8).<sup>43</sup></p>
 
 <p>As a result, Russia’s Muslims may face a “youth bulge” that often strongly correlates with elevated levels of conflict.<sup>44</sup> Russia will have to cope with a growing number of economically disadvantaged Muslim youth looking for purpose and money. Foreign fighters migrating to Russia may be able to offer them both.</p>
+</section>
+
+
+  <section id="link3">
 
 <h2>Southeast Asia</h2>
 
@@ -231,6 +316,7 @@
 <p>Historically, al Qaeda affiliates succeeded in Southeast Asia when charismatic, Afghanistan-experienced leaders successfully consolidated control of proto-insurgencies and marshaled them into terror campaigns. Though the reliance on individual leadership has made the terror group vulnerable, consistent local grievances guarantee at least some level of insurgent activity. The number of potential recruits, therefore, will not likely diminish in coming years.</p>
 
 <p>Perhaps for this reason, Philippine President Rodrigo Duterte made a statement in January 2017 urging members of the Moro Islamic Liberation Front (MILF) and Moro National Liberation Front (MNLF) not to “provide sanctuary to the terrorists in your areas.”<sup>57</sup> The Moro, or Filipino Muslim, population has long agitated for autonomous or independent control of historically Muslim land in the Southern Philippines.<sup>58</sup></p>
+</section>
 
 </br></br>
   <a href="doing-more-than-combat-threat.html"><span class="nextSection">Next Chapter: Doing More Than Combatting the Threat</span></a>
@@ -399,6 +485,8 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="../js/clean-blog.min.js"></script>
+
+
 </body>
 
 </html>

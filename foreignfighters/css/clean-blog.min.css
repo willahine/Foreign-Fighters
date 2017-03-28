@@ -709,7 +709,7 @@ li {
   }
 
 @media only screen and (max-width: 993px) {
-  .none {
+  .none, .byline {
       display:none;
     }
     .routesmapTop {
