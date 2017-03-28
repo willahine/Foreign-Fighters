@@ -1,0 +1,27 @@
+  var d = $("li.btn-ourjourney");
+  var e = $("li.btn-ourjourney span.text-menusubtitle");
+  var f = $("li.btn-ourjourney span.text-menutitle");
+  var g = $("li.btn-ourjourney hr");
+  var h = $("li.btn-ournetwork");
+  var i = $("li.btn-ournetwork span.text-menusubtitle");
+  var j = $("li.btn-ournetwork span.text-menutitle");
+  var k = $("li.btn-ournetwork hr");
+  var l = $("li.btn-thebigideas");
+  var m = $("li.btn-thebigideas span.text-menusubtitle");
+  var n = $("li.btn-thebigideas span.text-menutitle");
+  var o = $("li.btn-thebigideas hr");
+  var p = $(".nav-mainmenu li a");
+
+  setTimeout(function () { d.addClass("animate-menu")}, 2e3);
+  setTimeout(function () { e.addClass("animate-menusubtitle")}, 2.2e3);
+  setTimeout(function () { f.addClass("animate-menutitle")}, 2.5e3);
+  setTimeout(function () { g.addClass("animate-hr")}, 2.6e3);
+  setTimeout(function () { h.addClass("animate-menu")}, 3e3);
+  setTimeout(function () { i.addClass("animate-menusubtitle")}, 3.2e3);
+  setTimeout(function () { j.addClass("animate-menutitle")}, 3.5e3);
+  setTimeout(function () { k.addClass("animate-hr")}, 3.6e3);
+  setTimeout(function () { l.addClass("animate-menu")}, 2.7e3);
+  setTimeout(function () { m.addClass("animate-menusubtitle")},2.2e3);
+  setTimeout(function () { n.addClass("animate-menutitle")}, 2.8e3);
+  setTimeout(function () { o.addClass("animate-hr")}, 2.8e3);
+  setTimeout(function () { p.addClass("animate-links")}, 2e3);
