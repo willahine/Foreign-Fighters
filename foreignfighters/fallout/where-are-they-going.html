@@ -104,6 +104,7 @@ $(document).ready(function(){
 #stickynav ul {
   margin-left: 0;
   padding-left: 0;
+  margin-top:-190px
 }
 #stickynav #nav { position: fixed; z-index: 9999; }
 #stickynav #nav li { display: inline; }
@@ -112,14 +113,21 @@ $(document).ready(function(){
 text-decoration: none;
 margin-right: 10px;
 font-size: .9em;
+    background-color: white;
 font-weight: lighter;
-padding: 5px 7px;
 color: #444;
       transition: color .1s ease-out, background 1s ease-in;
 }
 #stickynav #nav li a:hover {
   color:#15173f;
   background-color:#f47b28
+}
+
+.noHov {
+  background-color: transparent !important;
+font-weight: 500 !important;
+text-transform: uppercase;
+color: #f47b28 !important;
 }
  .noHov:hover {
   color:#444 !important;
@@ -206,19 +214,19 @@ color: #444;
     </header>
 
     <!-- Main Content -->
+    <div id="w">
+     <div id="content">
+      <nav id="stickynav">
+       <ul id="nav">
+         <li><a class="noHov">Explore:</a></li>
+        <li><a href="#link1">Europe</a></li>
+        <li><a href="#link2">Russia</a></li>
+        <li><a href="#link3">SE Asia</a></li>
+       </ul>
+      </nav>
+      </div>
+    </div>
 
-                      <div id="w">
-                       <div id="content">
-                        <nav id="stickynav">
-                         <ul id="nav">
-                           <li><a class="noHov">Explore:</a></li>
-                          <li><a href="#link1">Europe</a></li>
-                          <li><a href="#link2">Russia</a></li>
-                          <li><a href="#link3">SE Asia</a></li>
-                         </ul>
-                        </nav>
-                        </div>
-                      </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
