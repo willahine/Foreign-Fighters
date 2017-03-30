@@ -709,6 +709,9 @@ li {
   }
 
 @media only screen and (max-width: 993px) {
+    .intro-header .site-heading {
+        padding-top: 100px;
+    }
   .none, .byline {
       display:none;
     }
