@@ -61,6 +61,99 @@
 
 </script>
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79782787-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 650, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<style>
+/** page structure **/
+#w {
+  margin: 0 auto;
+}
+#content {
+  padding: 25px 5px;
+}
+
+#stickynav {
+  z-index: 9999;
+}
+
+#stickynav ul {
+  margin-left: 0;
+  padding-left: 0;
+  margin-top:-308px
+}
+#stickynav #nav { position: fixed; z-index: 9999; }
+#stickynav #nav li { display: inline; }
+#stickynav #nav li a {
+  float: left;
+text-decoration: none;
+margin-right: 10px;
+font-size: .9em;
+    background-color: white;
+font-weight: lighter;
+color: #444;
+      transition: color .1s ease-out, background 1s ease-in;
+}
+#stickynav #nav li a:hover {
+  color:#15173f;
+  background-color:#f47b28
+}
+
+.noHov {
+  background-color: transparent !important;
+font-weight: 500 !important;
+text-transform: uppercase;
+color: #f47b28 !important;
+}
+ .noHov a:hover {
+  color:#444 !important;
+  background-color:transparent!important;
+}
+
+@media only screen and (max-width: 1365px)  {
+  #w {
+  display:none;
+  }
+
+}
+</style>
+
 </head>
 
 <body>
@@ -119,7 +212,7 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../img/case_studies.jpg'); opacity:.9;">
+    <header id="top" class="intro-header" style="background-image: url('../img/case_studies.jpg'); opacity:.9;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -134,6 +227,19 @@
     </header>
 
     <!-- Main Content -->
+
+    <div id="w">
+     <div id="content">
+      <nav id="stickynav">
+       <ul id="nav">
+         <li><a class="noHov">Explore</a></li>
+        <li><a href="#link1">Afghanistan</a></li>
+        <li><a href="#link2">Bosnia</a></li>
+        <li><a href="#link3">Chechnya</a></li>
+       </ul>
+      </nav>
+      </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -150,7 +256,8 @@
 
 <h1>Foreign Fighters in Modern Times</h1>
 
-<h2>Afghanistan: 1979 </h3>
+ <section id="link1">
+<h2>Afghanistan: 1979 </h2>
 
 <div style="background-color: rgba(21,23,63,0.9);
     height: 450px;
@@ -198,7 +305,9 @@
 <img width="100%" src="../img/web_af_2.jpg" alt="" />
 
 <p>The departure of Soviet troops in February 1989 removed the raison d’être for many of the foreigners. Some fighters returned to their countries of origin, where they either demobilized or joined local causes. A further cohort attempted to follow Abdullah Azzam’s vision of a vanguard that would “continue the jihad no matter how long the way is until the last breath and the last beating of the pulse or we see the Islamic state established.”<sup>18</sup> Osama bin Laden and Abdullah Azzam founded Maktab al Khidamat (MAK, or “Bureau of Services”), which was subsumed into al Qaeda in 1988 and facilitated ongoing operations.<sup>19</sup> Despite a limited military impact in Afghanistan, the battlefield skills and personal relationships fighters established provided credibility and the networks carried forward to other conflicts—including to that underway in Bosnia.</p>
+</section>
 
+ <section id="link2">
 
 <h2>Bosnia: 1992 </h2>
 
@@ -250,7 +359,9 @@
 <img width="100%" src="../img/web_bosnia_3.jpg" alt="" />
 
 <p>The signing of the Dayton Peace Accords in December 1995 effectively ended the combat role of foreign fighters in Bosnia. The Dayton Accords required all forces “not of local origin” to withdraw from the country within 30 days.<sup>27</sup> Despite the relative relief that the end of the war would bring to Muslim civilians in Bosnia, many of the fighters were upset at the peace because it not only ended the war but also robbed them of the opportunity to become martyrs.<sup>28</sup> However, the end of the Bosnian conflict resulted in a quick shift of fighters from the Balkans to the North Caucasus with another chance to fight for their cause.</p>
+</section>
 
+ <section id="link3">
 
 <h2>Chechnya: 1994 </h2>
 
@@ -307,6 +418,7 @@
 <p>Travel to Chechnya became easier as the conflict dragged on, in turn simplifying funding flows from Islamic organizations and Arab financiers, and facilitating movement from large Chechen diasporas, particularly that in Jordan.<sup>43</sup></p>
 
 <p>Although the Russo-Chechen War was largely a nationalistic fight for Chechens, the supranational Islamic facet of the conflict grew due to the efforts of Sheikh Fathi and Emir Khattab.<sup>44</sup> This new sense of religious identity among Chechens following the end of the first war in 1996 later played a role in shaping the political structure of the de facto independent republic.</p>
+</section>
 
 <div class="footer_menu">
 
