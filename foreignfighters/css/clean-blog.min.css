@@ -186,7 +186,7 @@ transition:color .2s ease-out, background 2s ease-in;
     }
     .navbar-custom .nav li a {
         color: #15173f;
-        padding: 20px
+        padding: 18px
     }
     .navbar-custom .nav li a:hover,
     .navbar-custom .nav li a:focus {
