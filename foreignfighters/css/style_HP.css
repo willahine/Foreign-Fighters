@@ -61,7 +61,7 @@ a.no-action-link {
 }
 
 a {
-		color: #fff;
+		color: #f47b28;
     text-decoration: none;
     line-height: inherit;
     cursor: pointer;
@@ -69,6 +69,7 @@ a {
 
 a:hover {
     text-decoration: underline;
+		color: #ffffff;
 }
 
 p a,p a:visited {
